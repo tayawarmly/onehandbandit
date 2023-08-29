@@ -24,7 +24,8 @@ struct Card: View {
                     .fill(iconBgColor.opacity(0.8))
                     .frame(width: 110, height: 110, alignment: .center)
             )
-            .frame(width: 90, height: 90, alignment: .center)
+            .padding(10)
+            .frame(width: 110, height: 110, alignment: .center)
     }
 }
 

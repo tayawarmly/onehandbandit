@@ -11,7 +11,7 @@ import SwiftUI
 struct onehandbanditApp: App {
     var body: some Scene {
         WindowGroup {
-            SlomanoView()
+            ContentView()
         }
     }
 }

@@ -7,16 +7,28 @@
 
 import SwiftUI
 
+struct CardModel: Identifiable {
+    let id = UUID()
+    let title: String
+}
+
 struct ContentView: View {
     
     @State var starsScores = 1000
     private var priceOne = 20
     private var priceTwo = 40
     private var priceSuper = 80
-  
-    var iconsPac = ["lizard.fill", "ladybug.fill", "bird.fill"]
-    @State private var randomIcons = ["star", "star", "star"
-//                                      , "star", "star", "star", "star", "star", "star"
+    
+    var iconsPackStrings = ["lizard.fill", "ladybug.fill", "bird.fill"]    
+    @State private var randomIcons = [CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star"),
+                                      CardModel(title: "star")
     ]
     @State private var testIcon: String = "star"
     @State private var testColor: Color = .orange
@@ -43,7 +55,7 @@ struct ContentView: View {
                     .sheet(isPresented: $showingInfo) {
                         InfoView()
                     }
-
+                    
                     Text("БАЛАНС:")
                         .fontWeight(.semibold)
                     Rectangle()
@@ -54,46 +66,36 @@ struct ContentView: View {
                         .frame(width: 70, height: 20)
                         .cornerRadius(20)
                 }
-            
-                // MARK: сетка с иконками
-//                LazyVGrid(columns: [GridItem(.fixed(20))], alignment: .center, content: {
-//                    ForEach(randomIcons, id:\.self){randomIcon in
-//                        Card(icon: randomIcon, iconColor: .orange, iconBgColor: Color(.systemGray6))
-//                    }
-//                })
                 
-             
-//                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 2, content: {
-//                    ForEach(randomIcons, id:\.self){oneIcon in
-//                        Card(icon: oneIcon, iconColor: .orange, iconBgColor: Color(.systemGray6))
-//                       
-//                    }
+                // MARK: сетка с иконками
+                
                 ScrollView {
-                  
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10, content: {
-                        ForEach(randomIcons, id:\.self){oneIcon in
-                            Card(icon: oneIcon, iconColor: .orange, iconBgColor: Color(.systemGray6))}
+                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 25, content: {
+                        ForEach(randomIcons) { model in
+                            Card(icon: model.title, iconColor: .orange, iconBgColor: Color(.systemGray6))
+                        }
                     })
-                  
+                    
                 }
-//                    )
+                //                    )
                 
                 // MARK: кнопка старт 1 + 2
                 // TODO: добавить вызов функций
                 HStack(spacing: 15) {
                     Button {
-//                        withAnimation(.easeOut(duration: 0.3)) {
-//                            if testIcon == "bird.fill" {
-//                                testIcon = "star"
-//                                testColor = .orange
-//                            } else {
-//                                testIcon = "bird.fill"
-//                                testColor = .blue
-//                            }
-//                            
-//                            // cнимает деньги с первой кнопки
-//                            starsScores = starsScores - priceOne
-//                        }
+                        //                        withAnimation(.easeOut(duration: 0.3)) {
+                        //                            if testIcon == "bird.fill" {
+                        //                                testIcon = "star"
+                        //                                testColor = .orange
+                        //                            } else {
+                        //                                testIcon = "bird.fill"
+                        //                                testColor = .blue
+                        //                            }
+                        //
+                        //                            // cнимает деньги с первой кнопки
+                        //                            starsScores = starsScores - priceOne
+                        //                        }
                         startX15()
                     } label: {
                         Text("старт х1.5")
@@ -113,11 +115,11 @@ struct ContentView: View {
                     .frame(width: 150, height: 50)
                     .background(.blue.opacity(0.8), in: Capsule())
                 }
+                .padding([.vertical, .horizontal])
             }
             
             // MARK: кнопка СУПЕРИГРА
-            // этот спейсер не трогать
-            Spacer()
+            
             Button {} label: {
                 Text ("СУПЕР ИГРА")
             }
@@ -132,24 +134,18 @@ struct ContentView: View {
             LinearGradient(gradient: Gradient(colors: [.yellow, .red, .red]),
                            startPoint: .top, endPoint: .bottom))
     }
-    
-    
     // func newRandom
     func startX15() {
         getRandomIcons()
-       // print(randomIcons)
+        // print(randomIcons)
     }
-    
     func getRandomIcons() {
         randomIcons = Array()
         
-        for _ in 1...3 {
-            randomIcons.append(iconsPac.randomElement() ?? "house")
+        for _ in 1...9 {
+            let card = CardModel(title: iconsPackStrings.randomElement()!)
+            randomIcons.append(card)
         }
-    }
-    
-    func detectWin() {
-        
     }
 }
 
