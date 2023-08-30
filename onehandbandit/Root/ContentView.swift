@@ -14,10 +14,13 @@ struct CardModel: Identifiable {
 
 struct ContentView: View {
     
-    @State var starsScores = 1000
-    private var priceOne = 20
-    private var priceTwo = 40
-    private var priceSuper = 80
+    @State var starsScores: Double = 1000
+    private var priceOne: Double = 20
+    private var priceTwo: Double = 40
+    private var priceSuper: Double = 80
+    private var ratio15 = 1.5
+    private var ratio25 = 2.5
+    private var ratioSuper = 4
     
     var iconsPackStrings = ["lizard.fill", "ladybug.fill", "bird.fill"]    
     @State private var randomIcons = [CardModel(title: "star"),
@@ -93,9 +96,9 @@ struct ContentView: View {
                         //                                testColor = .blue
                         //                            }
                         //
-                        //                            // cнимает деньги с первой кнопки
-                        //                            starsScores = starsScores - priceOne
-                        //                        }
+                        //
+                                              
+//                                                }
                         startX15()
                     } label: {
                         Text("старт х1.5")
@@ -137,8 +140,10 @@ struct ContentView: View {
     // func newRandom
     func startX15() {
         getRandomIcons()
-        // print(randomIcons)
+        oneRow()
+//         print(randomIcons)
     }
+    
     func getRandomIcons() {
         randomIcons = Array()
         
@@ -147,6 +152,21 @@ struct ContentView: View {
             randomIcons.append(card)
         }
     }
+    
+    func oneRow() {
+        // cнимает деньги с первой кнопки
+        starsScores = starsScores - priceOne
+        
+        if randomIcons[3].title == randomIcons[4].title &&
+            randomIcons[4].title == randomIcons[5].title &&
+            randomIcons[3].title == randomIcons[5].title {
+          
+            starsScores += priceOne * ratio15
+            
+        }
+  
+    }
+    
 }
 
 #Preview {

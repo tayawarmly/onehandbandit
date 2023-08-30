@@ -8,7 +8,7 @@
 import SwiftUI
 
 // компонент чтобы запихнуть в папку для частого использования
-struct Card: View {
+struct CardView: View {
     var icon: String
     var iconColor: Color
     var iconBgColor: Color

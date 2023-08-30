@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GameOverWindow: View {
+struct GameOverWindowView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.yellow, .white]),
