@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE0595372A7C147600EEC5C7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0595362A7C147600EEC5C7 /* Card.swift */; };
+		DE0595372A7C147600EEC5C7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0595362A7C147600EEC5C7 /* CardView.swift */; };
 		DE05953B2A8E95F200EEC5C7 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05953A2A8E95F200EEC5C7 /* InfoView.swift */; };
-		DE4C8BAC2A977963005A7DE8 /* GameOverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C8BAB2A977963005A7DE8 /* GameOverWindow.swift */; };
+		DE0B67962A9FAA4E00DC26C3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B67952A9FAA4E00DC26C3 /* Card.swift */; };
+		DE4C8BAC2A977963005A7DE8 /* GameOverWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C8BAB2A977963005A7DE8 /* GameOverWindowView.swift */; };
 		DE5A93842A74231200A5480D /* onehandbanditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A93832A74231200A5480D /* onehandbanditApp.swift */; };
 		DE5A93862A74231200A5480D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A93852A74231200A5480D /* ContentView.swift */; };
 		DE5A93882A74231400A5480D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5A93872A74231400A5480D /* Assets.xcassets */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE0595362A7C147600EEC5C7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DE0595362A7C147600EEC5C7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DE05953A2A8E95F200EEC5C7 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		DE4C8BAB2A977963005A7DE8 /* GameOverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverWindow.swift; sourceTree = "<group>"; };
+		DE0B67952A9FAA4E00DC26C3 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DE4C8BAB2A977963005A7DE8 /* GameOverWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverWindowView.swift; sourceTree = "<group>"; };
 		DE5A93802A74231200A5480D /* onehandbandit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onehandbandit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5A93832A74231200A5480D /* onehandbanditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onehandbanditApp.swift; sourceTree = "<group>"; };
 		DE5A93852A74231200A5480D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0B67922A9FA7A400DC26C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE0B67952A9FAA4E00DC26C3 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE0B67942A9FA81B00DC26C3 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A93832A74231200A5480D /* onehandbanditApp.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		DE5A93772A74231200A5480D = {
 			isa = PBXGroup;
 			children = (
@@ -57,13 +75,12 @@
 		DE5A93822A74231200A5480D /* onehandbandit */ = {
 			isa = PBXGroup;
 			children = (
-				DE5A93832A74231200A5480D /* onehandbanditApp.swift */,
-				DE5A93852A74231200A5480D /* ContentView.swift */,
 				DE5A93872A74231400A5480D /* Assets.xcassets */,
+				DEDE02652AA2453B00331615 /* Home */,
+				DE0B67922A9FA7A400DC26C3 /* Model */,
 				DE5A93892A74231400A5480D /* Preview Content */,
-				DE0595362A7C147600EEC5C7 /* Card.swift */,
-				DE05953A2A8E95F200EEC5C7 /* InfoView.swift */,
-				DE4C8BAB2A977963005A7DE8 /* GameOverWindow.swift */,
+				DE0B67942A9FA81B00DC26C3 /* Root */,
+				DE72AF612AAF4C4200534FF4 /* View */,
 			);
 			path = onehandbandit;
 			sourceTree = "<group>";
@@ -74,6 +91,24 @@
 				DE5A938A2A74231400A5480D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE72AF612AAF4C4200534FF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C8BAB2A977963005A7DE8 /* GameOverWindowView.swift */,
+				DE05953A2A8E95F200EEC5C7 /* InfoView.swift */,
+				DE0595362A7C147600EEC5C7 /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEDE02652AA2453B00331615 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DE5A93852A74231200A5480D /* ContentView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +182,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE05953B2A8E95F200EEC5C7 /* InfoView.swift in Sources */,
+				DE0B67962A9FAA4E00DC26C3 /* Card.swift in Sources */,
 				DE5A93862A74231200A5480D /* ContentView.swift in Sources */,
-				DE0595372A7C147600EEC5C7 /* Card.swift in Sources */,
-				DE4C8BAC2A977963005A7DE8 /* GameOverWindow.swift in Sources */,
+				DE0595372A7C147600EEC5C7 /* CardView.swift in Sources */,
+				DE4C8BAC2A977963005A7DE8 /* GameOverWindowView.swift in Sources */,
 				DE5A93842A74231200A5480D /* onehandbanditApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
