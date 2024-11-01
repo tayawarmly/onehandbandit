@@ -10,11 +10,8 @@ import SwiftUI
 struct GameOverWindowView: View {
     var body: some View {
         ZStack {
-//            LinearGradient(gradient: Gradient(colors: [.yellow, .white]),
-//                                      startPoint: .top, endPoint: .bottom).ignoresSafeArea()
             VStack() {
                 
-            
                 Text("КОНЕЦ ИГРЫ")
                     .font(.largeTitle)
                     .shadow(radius: 2, x : 2, y : 2)
@@ -44,7 +41,7 @@ struct GameOverWindowView: View {
         }
         .background(Image("bgGameOver"))
     }
-      
+    
 }
 #Preview {
     GameOverWindowView()

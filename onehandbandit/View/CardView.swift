@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// компонент чтобы запихнуть в папку для частого использования
 struct CardView: View {
     var icon: String
     var iconColor: String
@@ -31,9 +30,6 @@ struct CardView: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-//        Card(icon: "house.fill")
-//            .background(.blue)
-//            .previewLayout(.sizeThatFits)
         ContentView()
     }
 }

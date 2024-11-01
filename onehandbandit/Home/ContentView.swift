@@ -22,13 +22,11 @@ struct ContentView: View {
     @State private var randomCards: [Card] = Card.MOCK_CARD
     @State private var testIcon: String = "star"
     @State private var testColor: Color = .orange
-    
     @State private var showingInfo = false
     
     var body: some View {
         
         VStack {
-            
             
             VStack(spacing: 30) {
                 
@@ -37,9 +35,7 @@ struct ContentView: View {
                     .shadow(radius: 2, x : 2, y : 2)
                     .padding(.vertical)
                 
-                // ифно + баланс
-                
-                HStack(spacing: 10) {
+                HStack(spacing: 10) { // инфо + баланс
                     Button {
                         showingInfo.toggle()
                     } label: {
@@ -112,7 +108,6 @@ struct ContentView: View {
             
             
             // MARK: кнопка СУПЕРИГРА
-            
             Button {
                 
                 startSuper()
@@ -129,18 +124,14 @@ struct ContentView: View {
             
             Spacer()
         }
-        //        .background(
-        //            LinearGradient(gradient: Gradient(colors: [.yellow, .red, .red]),
-        //                           startPoint: .top, endPoint: .bottom))
         .background(.yellow.opacity(0.8))
         .cornerRadius(10)
         .background(Image("bgPhoto"))
     }
     
-    //MARK: осн-е функции для кнопок
-    // функция рандомит 9 карт
+    //MARK: функции для кнопок
     
-    func getRandomCards() {
+    func getRandomCards() { // рандомно выбирает из 9 карт
         randomCards = Array()
         
         for _ in 1...9 {
@@ -150,16 +141,13 @@ struct ContentView: View {
         }
     }
     
-    // функции на кнопку 1.5: выигрышный ряд, посчет монет
-    
-    func startX15() {
+    func startX15() {   // действия на кнопку 1.5 выигрышный ряд, посчет монет
         getRandomCards()
         oneRow15()
     }
     
     func oneRow15() {
-        // cнимает деньги с первой кнопки
-        starsScores = starsScores - priceOne
+        starsScores = starsScores - priceOne // cнимает деньги с первой кнопки
         
         if randomCards[3].icon == randomCards[4].icon &&
             randomCards[4].icon == randomCards[5].icon &&
@@ -177,16 +165,13 @@ struct ContentView: View {
         }
     }
     
-    // функции на кнопку 2.5: выигрышный ряд, посчет баллов
-    
-    func startX25() {
+    func startX25() {    // действия на кнопку 2.5: выигрышный ряд, посчет баллов
         getRandomCards()
         oneRow25()
     }
     
     func oneRow25() {
         
-        // cнимает деньги с 2 кнопки
         starsScores = starsScores - priceTwo
         
         if randomCards[3].icon == randomCards[4].icon &&
@@ -205,16 +190,13 @@ struct ContentView: View {
         }
     }
     
-    // функции на кнопку суперигра: выигрышный ряд, посчет баллов
-    
-    func startSuper() {
+    func startSuper() {     // действия на кнопку суперигра: выигрышный ряд, посчет баллов
         getRandomCards()
         oneRowSuper()
     }
     
     func oneRowSuper() {
         
-        // cнимает деньги с 2 кнопки
         starsScores = starsScores - priceSuper
         
         if randomCards[3].icon == randomCards[4].icon &&
@@ -232,8 +214,6 @@ struct ContentView: View {
             
         }
     }
-    
-    // TODO: функция объединеняет индекс
 }
 
 #Preview {

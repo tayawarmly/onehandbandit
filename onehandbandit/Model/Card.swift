@@ -9,7 +9,7 @@ import Foundation
 
 struct Card: Codable, Identifiable {
     let id: String
-    let icon: String 
+    let icon: String
     var iconColor: String
     var bgColor: String
 }
