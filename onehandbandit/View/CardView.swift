@@ -10,18 +10,18 @@ import SwiftUI
 // компонент чтобы запихнуть в папку для частого использования
 struct CardView: View {
     var icon: String
-    var iconColor: Color
-    var iconBgColor: Color
+    var iconColor: String
+    var iconBgColor: String
     
     var body: some View {
         Image(systemName: icon)
             .resizable()
             .scaledToFit()
             .aspectRatio(contentMode: .fit)
-            .foregroundStyle(iconColor)
+            .foregroundStyle(Color(iconColor))
             .background(
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(iconBgColor.opacity(0.8))
+                    .fill(Color(iconBgColor).opacity(0.9))
                     .frame(width: 110, height: 110, alignment: .center)
             )
             .padding(10)
